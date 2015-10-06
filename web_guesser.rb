@@ -10,14 +10,16 @@ end
 STATIC = Random.new.rand(100)
 
 def check_guess(guess)
-  if guess.to_i > STATIC
-    "#{guess} is too high"
+  if guess == '' || guess == nil
+    "please enter guess"
   elsif (guess.to_i - STATIC) > 5
     "#{guess} is way too high"
-  elsif guess.to_i < STATIC
-    "#{guess} is too low"
   elsif (STATIC - guess.to_i) > 5
     "#{guess} is way too low"
+  elsif guess.to_i > STATIC
+    "#{guess} is too high"
+  elsif guess.to_i < STATIC
+    "#{guess} is too low"
   elsif guess.to_i == STATIC
     "Correct!"
   end
