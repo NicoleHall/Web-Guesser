@@ -1,5 +1,8 @@
 require 'sinatra'
+require 'sinatra/reloader'
+
+static = Random.new.rand(100)
 
 get '/' do
-  "Hello World"
+  "the SECRET NUMBER is #{static}"
 end
